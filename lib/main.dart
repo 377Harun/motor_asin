@@ -1,14 +1,25 @@
+import 'dart:io';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:motor_asin/Dil.dart';
 import 'package:motor_asin/controller.dart';
-import 'package:motor_asin/screens/Home.dart';
+import 'package:motor_asin/service/firebaseNotifiSrvice.dart';
+import 'package:motor_asin/views/registerPage.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
-//import 'package:splash_screen_view/splash_screen_view.dart';
 
 void main() async {
+  /*
+  ensure initialized her zaman en üste koy durumu kontrol garanti altına alsın.
+   */
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(
+      FirebaseNotificationService.backGroundMessage);
+  HttpOverrides.global = MyHttpOverrides();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarBrightness: Brightness.light,
     statusBarColor: Colors.transparent,
@@ -16,7 +27,6 @@ void main() async {
     // systemNavigationBarColor: Colors.white, navigation bar alt kısım
   ));
   await GetStorage.init();
-  WidgetsFlutterBinding.ensureInitialized();
 
   runApp(MyApp());
 }
@@ -32,17 +42,20 @@ class _MyAppState extends State<MyApp> {
   var controller = Get.put(Controller());
   GetStorage box = GetStorage();
 
-  @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      /*  theme: ThemeData().copyWith(
+      /*   theme: ThemeData().copyWith(
         brightness: Brightness.light,
         iconTheme: IconThemeData(color: Colors.white),
         appBarTheme: AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle.light,
           backgroundColor: Colors.transparent,
           elevation: 0,
+
+            //bunları ekle
+
         ),
+         //textTheme: Theme.of(context).textTheme.subtitle1,
       ),*/
 
       translations: Dil(),
@@ -58,7 +71,7 @@ class _MyAppState extends State<MyApp> {
       title: "Motor Aşin",
       home: SplashScreenView(
         backgroundColor: Color(0xfff7f7f7),
-        navigateRoute: Home(),
+        navigateRoute: /*box.read("giris") == true ? Home() :*/ RegisterPage(),
         duration: 5000,
         imageSize: 150,
         text: "Motor Aşin Ailesine Hoşgeldiniz",
@@ -77,5 +90,14 @@ class _MyAppState extends State<MyApp> {
         imageSrc: "images/motorasinLogo.png",
       ),
     );
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

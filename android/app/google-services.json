@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "900666568651",
+    "firebase_url": "https://motorasinapp-default-rtdb.firebaseio.com",
+    "project_id": "motorasinapp",
+    "storage_bucket": "motorasinapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900666568651:android:b833848f5f7e6253dcd04e",
+        "android_client_info": {
+          "package_name": "com.example.motor_asin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900666568651-tun4mc47k5jaotkrglc9bf7dl95rsaer.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_yCef1yT32AKukofUZXINAz7LuMDenWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900666568651-tun4mc47k5jaotkrglc9bf7dl95rsaer.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

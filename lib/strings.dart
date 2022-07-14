@@ -7,7 +7,7 @@ class Strings {
   static const String yonetimKurulu = "Yönetim Kurulu";
   static const String ramazanAsci = "Ramazan AŞÇI";
   static const String ramazanAsciKimdir = "Ramazan Aşçı Kimdir ?";
-  static const String ramazanAsciKimdirAciklama =
+  static const String ramazanAsciKimdirDetay =
       "1954 yılında Siirt’de doğdu. Fırat Üniversitesi Elektrik Mühendisliği bölümü mezunu olan Ramazan Aşçı, henüz öğrenciliği devam ederken Motor Aşin’deki işlere destek olmaya başladı; mezuniyet sonrasında ise ağabeyi ile birlikte işin başına geçti. 2020 yılında Şirket kurucusu Suphi Aşçı’nın vefatından sonra, Yönetim Kurulu Başkanı olarak seçildi. Eski bir boksör olan Ramazan Aşçı, evli ve 3 çocuk babasıdır.";
   static const String saimAsciKimdir = "Saim Aşçı Kimdir ?";
   static const String saimAsciKimdirDetay =
@@ -51,20 +51,29 @@ class Strings {
   static const String motorAsinYonetimKuruluUyeleri =
       "MOTOR AŞİN Yönetim Kurulu Üyeleri";
 
+  //baslik
   static const motorAsinBaslikimage = "images/motorasinBaslik.jpg";
   static const ellinciYilimage = "images/50.yil.jpg";
   static const arabaImage = "images/araba.jpg";
+
+  //Ulkeler
   static const amerikaPng = "images/ulkeler/amerika.png";
   static const fransaPng = "images/ulkeler/fransa.png";
   static const almanyaPng = "images/ulkeler/almanya.png";
   static const ingilterePng = "images/ulkeler/ingiltere.png";
   static const cinPng = "images/ulkeler/cin.png";
   static const ulkeIconPng = "images/ulkeicon.png";
+
+  //subeler
   static const ankaraImage = "images/ankara.jpg";
   static const izmirImage = "images/izmir.jpg";
   static const istanbulImage = "images/istanbul.jpg";
+
+  //aspart
   static const konumPng = "images/konum.png";
   static const aspartLogoPng = "images/aspartLogo.png";
+
+  //markalar
   static const nuralPng = "images/markalar/nural.png";
   static const wabcoPng = "images/markalar/wabco.png";
   static const glaycoPng = "images/markalar/glyco.png";
@@ -74,36 +83,33 @@ class Strings {
   static const aisinPng = "images/markalar/aisin.png";
   static const amcPng = "images/markalar/amc.png";
   static const atcPng = "images/markalar/atc.png";
+  static const autlineaPng = "images/markalar/autlinea.png";
+  static const behrPng = "images/markalar/behr.png";
+  static const behrhellaPng = "images/markalar/behrhella.png";
+  static const borgwarnerPng = "images/markalar/borgwarner.png";
+  static const beruPng = "images/markalar/beru.png";
+  static const bogePng = "images/markalar/boge.png";
+  static const bfPng = "images/markalar/bf.png";
+  static const bluePng = "images/markalar/blue.png";
+  static const cojaliPng = "images/markalar/cojali.png";
+  static const continentalPng = "images/markalar/continental.png";
+  static const cortecoPng = "images/markalar/corteco.png";
+  static const championPng = "images/markalar/champion.png";
+  static const bremiPng = "images/markalar/bremi.png";
+  static const boschPng = "images/markalar/bosch.png";
+  static const dasPng = "images/markalar/das.png";
+  static const sparePng = "images/markalar/spare.png";
+  static const delphiPng = "images/markalar/delphi.png";
+  static const euroPng = "images/markalar/euro.png";
+  static const fagPng = "images/markalar/fag.png";
+  static const fanPng = "images/markalar/fan.png";
 
   static const markaPng = "images/marka.png";
+  static const tirJpg = "images/tirlar.jpg";
   static const ramazanAsciImage = "images/ramazan asci.jpg";
   static const saimAsciImage = "images/saim asci.jpg";
   static const fahrettinAsciImage = "images/fahrettin asci.jpg";
   static const lottieCarJson = "images/lottieCar.json";
   static const lottieBusJson = "images/lottieBus.json";
   static const lottieSuvJson = "images/lottieSuv.json";
-  static const audiPng = "images/arabalar/audi.png";
-  static const bmwPng = "images/arabalar/bmw.png";
-  static const chevroletPng = "images/arabalar/chevrolet.png";
-  static const hondaPng = "images/arabalar/honda.png";
-  static const hyundaiPng = "images/arabalar/hyundai.png";
-  static const ivecoPng = "images/arabalar/ıveco trucks.png";
-  static const mazdaPng = "images/arabalar/mazda.png";
-  static const mitsubishiPng = "images/arabalar/mitsubishi.png";
-  static const nissanPng = "images/arabalar/nissan.png";
-  static const seatPng = "images/arabalar/seat.png";
-  static const skodaPng = "images/arabalar/skoda.png";
-  static const toyotaPng = "images/arabalar/toyota.png";
-  static const fordPng = "images/arabalar/ford trucks.png";
-  static const volkswagenPng = "images/arabalar/volkswagen.png";
-  static const dafPng = "images/arabalar/daf.png";
-  static const deutzPng = "images/arabalar/deutz.png";
-  static const kiaPng = "images/arabalar/kia.png";
-  static const renaultPng = "images/arabalar/renault.png";
-  static const landRoverPng = "images/arabalar/land rover.png";
-  static const opelPng = "images/arabalar/opel.png";
-  static const porschePng = "images/arabalar/porsche.png";
-  static const manPng = "images/arabalar/man.png";
-  static const volvoPng = "images/arabalar/volvo.png";
-  static const scalaPng = "images/arabalar/scania.png";
 }

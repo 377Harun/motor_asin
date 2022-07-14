@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:motor_asin/Dil.dart';
 
 class Controller extends GetxController {
   var index = 0.obs;
@@ -10,11 +9,19 @@ class Controller extends GetxController {
   var renk3 = Colors.grey.obs;
   var renk2 = Colors.grey.obs;
 
+  var qrcodeDegerUrun = " ".obs;
+
+  var qrcodeDegerMusteri = " ".obs;
+
+  RxBool isAdmin = false.obs;
+
+  RxString kullanici = "".obs;
+
   GetStorage box = GetStorage();
 
-  RxBool videoVisibility = true.obs;
+  // RxBool videoVisibility = true.obs;
 
-  //RxBool aramaYapiliyor = false.obs;
+  RxInt pageIndex = 0.obs;
 
   Map<dynamic, String> yazilar = {
     0: "Geniş Ürün Yelpazesi\n130 markadan 90 bin çeşit ve \n 1.5 milyon üründe Türkiye'nin her \n yerinde ve 70 ülkedeyiz.",
@@ -28,7 +35,7 @@ class Controller extends GetxController {
     2: Colors.grey,
   }.obs;
 
-  SayiArttir() async {
+  sayiArttir() async {
     if (index.value == 2) {
       index.value = 0;
     } else {
@@ -37,8 +44,4 @@ class Controller extends GetxController {
   }
 
   var backGroundColor = Colors.black.obs;
-
-  void ColorChange(color) {
-    backGroundColor.value = color;
-  }
 }
