@@ -8,6 +8,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:motor_asin/Dil.dart';
 import 'package:motor_asin/controller.dart';
 import 'package:motor_asin/service/firebaseNotifiSrvice.dart';
+import 'package:motor_asin/views/onBoardWidget.dart';
 import 'package:motor_asin/views/registerPage.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 
@@ -40,6 +41,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    if (box.read("onboard") == null) {
+      box.write("onboard", false);
+    }
+
+    print("storage değeri : ${box.read("onboard")}");
+  }
+
   var controller = Get.put(Controller());
   GetStorage box = GetStorage();
 
@@ -72,7 +82,8 @@ class _MyAppState extends State<MyApp> {
       title: "Motor Aşin",
       home: SplashScreenView(
         backgroundColor: Color(0xfff7f7f7),
-        navigateRoute: /*box.read("giris") == true ? Home() :*/ RegisterPage(),
+        navigateRoute:
+            box.read("onboard") == false ? onBoardScreen() : RegisterPage(),
         duration: 5000,
         imageSize: 150,
         text: "Motor Aşin Ailesine Hoşgeldiniz",

@@ -609,7 +609,7 @@ class _HomeState extends State<Home> {
           child: Card(
             color: Colors.white,
             shadowColor: Colors.white,
-            elevation: 20,
+            elevation: 0,
             child: Column(
               children: [
                 Row(
@@ -731,7 +731,7 @@ class _HomeState extends State<Home> {
             );
           },
           child: Card(
-              color: Colors.grey,
+              color: Colors.grey.shade500,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(5),
@@ -740,7 +740,7 @@ class _HomeState extends State<Home> {
                 bottomRight: Radius.circular(5),
               )),
               child: SizedBox(
-                  height: Get.height * 0.1,
+                  height: Get.height * 0.07,
                   width: Get.width * 0.7,
                   child: _textStratejikVizyon())),
         ),

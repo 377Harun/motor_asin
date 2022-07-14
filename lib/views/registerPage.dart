@@ -181,6 +181,7 @@ class _RegisterPageState extends State<RegisterPage> {
               });
               _loginYonlendirme(context);
               snackBarGiris();
+              box.write("onboard", true);
             } else {
               snackBarMailOnayla();
             }
