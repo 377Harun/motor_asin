@@ -14,6 +14,7 @@ import 'package:splash_screen_view/SplashScreenView.dart';
 void main() async {
   /*
   ensure initialized her zaman en üste koy durumu kontrol garanti altına alsın.
+  ikinci gönderim
    */
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
