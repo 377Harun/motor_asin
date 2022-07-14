@@ -693,7 +693,7 @@ class _HomeState extends State<Home> {
                           itemBuilder: (context, indeks) {
                             return Card(
                               color: Colors.white,
-                              elevation: 10,
+                              elevation: 0,
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -731,7 +731,7 @@ class _HomeState extends State<Home> {
             );
           },
           child: Card(
-              color: Colors.red.shade900,
+              color: Colors.grey,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(5),
@@ -1067,7 +1067,7 @@ class _HomeState extends State<Home> {
 
   Container _lottieJson(String lottieImage) {
     return Container(
-      color: Colors.red.shade900,
+      color: Colors.grey,
       height: Get.height * 0.1,
       child: Lottie.asset(lottieImage),
     );
