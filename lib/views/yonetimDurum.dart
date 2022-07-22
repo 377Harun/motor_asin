@@ -21,12 +21,6 @@ class _YonetimDurumState extends State<YonetimDurum> {
   String kullaniciId = "";
 
   Future<void> durumDegistirFalse() async {
-    /*  await db
-        .collection('yonetim')
-        .doc(YonetimDocId().yonetimDocId[controller.kullanici.value])
-        .update({'durum': false});
-*/
-
     await FirebaseFirestore.instance
         .collection("yonetim")
         .where("email", isEqualTo: controller.kullanici.value)
@@ -43,10 +37,6 @@ class _YonetimDurumState extends State<YonetimDurum> {
   }
 
   Future<void> durumDegistirTrue() async {
-    /*  await db
-        .collection('yonetim')
-        .doc(YonetimDocId().yonetimDocId[controller.kullanici.value])
-        .update({'durum': true});*/
     await FirebaseFirestore.instance
         .collection("yonetim")
         .where("email", isEqualTo: controller.kullanici.value)

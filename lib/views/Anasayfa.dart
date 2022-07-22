@@ -472,26 +472,9 @@ class _AnasayfaState extends State<Anasayfa> {
                   "style: context.textTema().subtitle1,\nextension buildContextExtension on BuildContext {\nTextTheme textTema() {\nreturn Theme.of(this).textTheme;\n}}"),
               bosluk(),
               bosluk(),
+              _pageviewNoktaDinamik(),
               bosluk(),
-              AnimatedCrossFade(
-                firstChild: Container(
-                  color: Colors.blue,
-                  height: 12,
-                  width: Get.width * 0.5,
-                ),
-                secondChild: Text(
-                  "Harun Baba",
-                  style:
-                      TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
-                ),
-                crossFadeState: isCrossfadeFirst
-                    ? CrossFadeState.showSecond
-                    : CrossFadeState.showFirst,
-                sizeCurve: Curves.elasticIn,
-                firstCurve: Curves.bounceOut,
-                secondCurve: Curves.easeInQuad,
-                duration: Duration(seconds: 2),
-              ),
+              _animatedCrossFade(),
               bosluk(),
               bosluk(),
               ElevatedButton(
@@ -507,6 +490,60 @@ class _AnasayfaState extends State<Anasayfa> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  AnimatedCrossFade _animatedCrossFade() {
+    return AnimatedCrossFade(
+      firstChild: Container(
+        color: Colors.blue,
+        height: 12,
+        width: Get.width * 0.5,
+      ),
+      secondChild: Text(
+        "Harun Baba",
+        style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+      ),
+      crossFadeState: isCrossfadeFirst
+          ? CrossFadeState.showSecond
+          : CrossFadeState.showFirst,
+      sizeCurve: Curves.elasticIn,
+      firstCurve: Curves.bounceOut,
+      secondCurve: Curves.easeInQuad,
+      duration: Duration(seconds: 2),
+    );
+  }
+
+  SizedBox _pageviewNoktaDinamik() {
+    return SizedBox(
+      height: 100,
+      width: 200,
+      child: PageView.builder(
+        scrollDirection: Axis.horizontal,
+        onPageChanged: (value) {
+          controller.noktaIndex.value = value;
+        },
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return Stack(
+            children: [
+              Image.asset(Strings.motorAsinBaslikimage),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  for (var i = 0; i < 3; i = i + 1)
+                    Obx(() => Icon(
+                          Icons.cloud,
+                          color: controller.noktaIndex.value == i
+                              ? Colors.black
+                              : Colors.white,
+                        ))
+                ],
+              ),
+            ],
+          );
+        },
       ),
     );
   }

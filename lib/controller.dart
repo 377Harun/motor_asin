@@ -22,6 +22,7 @@ class Controller extends GetxController {
   // RxBool videoVisibility = true.obs;
 
   RxInt pageIndex = 0.obs;
+  RxInt noktaIndex = 0.obs;
 
   Map<dynamic, String> yazilar = {
     0: "Geniş Ürün Yelpazesi\n130 markadan 90 bin çeşit ve \n 1.5 milyon üründe Türkiye'nin her \n yerinde ve 70 ülkedeyiz.",
